@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plagiarism Check Result</title>
+</head>
+<body>
+    <h1>Plagiarism Check Result</h1>
+    {% if error %}
+        <p style="color: red;"><strong>Error:</strong> {{ error }}</p>
+    {% else %}
+        <p><strong>File 1:</strong> {{ file1_name }}</p>
+        <p><strong>File 2:</strong> {{ file2_name }}</p>
+        <p><strong>Similarity Score:</strong> {{ similarity_score }}%</p>
+
+        <h3>Extracted Text from File 1:</h3>
+        <textarea rows="10" cols="80" readonly>{{ text1 }}</textarea>
+
+        <h3>Extracted Text from File 2:</h3>
+        <textarea rows="10" cols="80" readonly>{{ text2 }}</textarea>
+    {% endif %}
+    <br><br>
+    <a href="/">Check another pair of PDFs</a>
+</body>
+</html>
